@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop - Crochetopia</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #fff9fc;
+      color: #3d3d3d;
+      line-height: 1.6;
+    }
+
+    
+    .top-header {
+      background-color: #e6d6f3;
+      text-align: center;
+      padding: 1.5rem 1rem 0.5rem;
+      border-bottom: 2px solid #d8bff1;
+    }
+
+    .top-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #6d4c91;
+    }
+
+    .top-header p {
+      font-size: 1rem;
+      color: #6d4c91;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    nav {
+      background-color: #f4e9fc;
+      padding: 1rem 0;
+    }
+
+    nav a {
+      margin: 0 1.5rem;
+      text-decoration: none;
+      color: #5a4c68;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      color: #6d4c91;
+    }
+
+    /* Main layout after header */
+    .main-container {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #f4e9fc;
+      padding: 2rem 1rem;
+      border-right: 2px solid #e6d6f3;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 1rem;
+      color: #6d4c91;
+      text-align: center;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li {
+      margin-bottom: 1rem;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #5a4c68;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .sidebar a:hover {
+      color: #6d4c91;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 2rem;
+    }
+
+    .category-section {
+      display: none;
+    }
+
+    .category-section.active {
+      display: block;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .product {
+      background-color: #fff;
+      border: 1px solid #e8dff1;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product h4 {
+      margin: 1rem 0 0.5rem;
+      color: #6d4c91;
+    }
+
+    .product p {
+      margin-bottom: 0.5rem;
+    }
+
+    .product button {
+      background-color: #b68bc0;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .product button:hover {
+      background-color: #9e6fa8;
+    }
+
+    .cart {
+      margin-top: 2rem;
+      background-color: #fcefff;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #d6c1e6;
+    }
+
+    .cart h3 {
+      margin-bottom: 1rem;
+      color: #6d4c91;
+    }
+
+    .cart ul {
+      list-style-type: none;
+      margin-bottom: 1rem;
+    }
+
+    .cart li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <div class="top-header">
+    <h1>Crochetopia</h1>
+    <p>"From My Hands to Your Heart."</p>
+    <nav>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="shop1.html">Shop</a>
+        <a href="#contact">Order</a>
+        <a href="#about">About</a>
+      </nav>
+      
+    </nav>
+  </div>
+
+  <div class="main-container">
+   
+    <div class="sidebar">
+      <h2>Categories</h2>
+      <ul>
+        <li><a onclick="showCategory('flower-pots')">Flower Pots</a></li>
+        <li><a onclick="showCategory('single-flowers')">Single Flowers</a></li>
+        <li><a onclick="showCategory('bouquet')">Bouquets</a></li>
+        <li><a onclick="showCategory('keychains')">Key Chains</a></li>
+        <li><a onclick="showCategory('phone-charms')">Phone Charms</a></li>
+        <li><a onclick="showCategory('hair-accessories')">Hair Accessories</a></li>
+      </ul>
+    </div>
+
+    
+    <div class="main-content">
+      
+      <div class="category-section" id="flower-pots">
+        <h2>flower-pots</h2>
+          <div class="product">
+            <img src="https://via.placeholder.com/200?text=Single+Flower" alt="Sunflower Pot">
+            <h4>Sunflower Pot</h4>
+            <p>₹250</p>
+            <button onclick="addToCart('Sunflower pot', 250)">Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="https://via.placeholder.com/200?text=Single+Flower" alt="daisy Pot">
+            <h4>Daisyflower pot</h4>
+            <p>₹100</p>
+            <button onclick="addToCart('Daisyflower pot', 100)">Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="https://via.placeholder.com/200?text=Single+Flower" alt="rose Pot">
+            <h4>roseflower pot</h4>
+            <p>₹100</p>
+            <button onclick="addToCart('roseflower pot', 100)">Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="https://via.placeholder.com/200?text=Single+Flower" alt="Tulipflower Pot">
+            <h4>Tulipflower pot</h4>
+            <p>₹100</p>
+            <button onclick="addToCart('Tulipflower pot', 100)">Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="https://via.placeholder.com/200?text=Single+Flower" alt="double daisy Pot">
+            <h4>Double Daisyflower pot</h4>
+            <p>₹100</p>
+            <button onclick="addToCart('Double Daisyflower pot', 100)">Add to Cart</button>
+          </div>
+        </div>
+    
+
+        <div class="category-section" id="single-flowers">
+          <h2>Single Flowers</h2>
+          <div class="products">
+            <div class="product">
+              <img src="https://via.placeholder.com/200?text=Roseflower" alt="Roseflower">
+              <h4>Roseflower</h4>
+              <p>₹120</p>
+              <button onclick="addToCart('Roseflower', 120)">Add to Cart</button>
+            </div>
+            <div class="product">
+              <img src="https://via.placeholder.com/200?text=Roseflower" alt="Sunflower">
+              <h4>Sunflower</h4>
+              <p>₹120</p>
+              <button onclick="addToCart('Sunflower', 120)">Add to Cart</button>
+            </div>
+            <div class="product">
+              <img src="https://via.placeholder.com/200?text=Roseflower" alt="Daisyflower">
+              <h4>Daisyflower</h4>
+              <p>₹120</p>
+              <button onclick="addToCart('Daisyflower', 120)">Add to Cart</button>
+            </div>
+            <div class="product">
+              <img src="https://via.placeholder.com/200?text=Roseflower" alt="Tulipflower">
+              <h4>Tulipflower</h4>
+              <p>₹120</p>
+              <button onclick="addToCart('Tulipflower', 120)">Add to Cart</button>
+            </div>
+            
+          </div>
+        </div>
+
+      <div class="category-section" id="bouquet">
+        <h2>Bouquets</h2>
+        <div class="products">
+          <div class="product">
+            <img src="https://via.placeholder.com/200?text=Bouquet" alt="Bouquet">
+            <h4>Mixed Bouquet</h4>
+            <p>₹400</p>
+            <button onclick="addToCart('Mixed Bouquet', 400)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-section" id="keychains">
+        <h2>Key Chains</h2>
+        <div class="products">
+          <div class="product">
+            <img src="https://via.placeholder.com/200?text=Key+Chain" alt="Key Chain">
+            <h4>Daisy Keychain</h4>
+            <p>₹90</p>
+            <button onclick="addToCart('Daisy Keychain', 90)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-section" id="phone-charms">
+        <h2>Phone Charms</h2>
+        <div class="products">
+          <div class="product">
+            <img src="https://via.placeholder.com/200?text=Phone+Charm" alt="Phone Charm">
+            <h4>Butterfly Charm</h4>
+            <p>₹110</p>
+            <button onclick="addToCart('Butterfly Charm', 110)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-section" id="hair-accessories">
+        <h2>Hair Accessories</h2>
+        <div class="products">
+          <div class="product">
+            <img src="https://via.placeholder.com/200?text=Hair+Clip" alt="Hair Clip">
+            <h4>Flower Hair Clip</h4>
+            <p>₹70</p>
+            <button onclick="addToCart('Flower Hair Clip', 70)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+     
+      <div class="cart">
+        <h3>Your Cart</h3>
+        <ul id="cart-items"></ul>
+        <p><strong>Total: ₹<span id="cart-total">0</span></strong></p>
+        <h4>Place Order</h4>
+        <p>Send your cart details and make payment via:</p>
+        <ul>
+          <li><strong>Email:</strong> Crochetopia@gmail.com</li>
+          <li><strong>Instagram DM:</strong> @Crochetopia</li>
+          <li><strong>WhatsApp:</strong> +91-xxx</li>
+        </ul>
+       
+      </div>
+    </div>
+  </div>
+
+  
+  <script>
+    function showCategory(categoryId) {
+      const sections = document.querySelectorAll('.category-section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(categoryId).classList.add('active');
+    }
+
+    const cart = [];
+
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById('cart-items');
+      cartList.innerHTML = '';
+      let total = 0;
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - ₹${item.price}`;
+        cartList.appendChild(li);
+        total += item.price;
+      });
+      document.getElementById('cart-total').textContent = total;
+    }
+  </script>
+</body>
+</html>
