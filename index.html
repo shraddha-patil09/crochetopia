@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+        <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,7 +11,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
+      font-family: cursive;
     }
 
     body {
@@ -45,6 +46,53 @@
       font-weight: bold;
     }
     
+.our-picks {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #FDF6FF; 
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.section-title hr {
+  flex: 1;
+  border: none;
+  height: 2px;
+  background-color: #D1B3E0; 
+}
+
+.section-title span {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #5D3B66; 
+  white-space: nowrap;
+}
+
+.picks-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pick-item {
+  width: 200px;
+  height: 200px;
+  background-color: #E8DAEF; 
+  border: 2px dashed #F4A9B8; 
+  border-radius: 12px;
+}
+
+
 
     </style>
     </head>
@@ -60,11 +108,32 @@
           <nav>
             <a href="index.html">Home</a>
             <a href="shop1.html">Shop</a>
-            <a href="#contact">Order</a>
-            <a href="#about">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
           </nav>
           
         </nav>
+        <section class="our-picks">
+  <div class="section-title">
+    <hr><span>Our Picks</span><hr>
+  </div>
+  <div class="picks-gallery">
+    
+    <div class="pick-item"></div>
+    <div class="pick-item"></div>
+    <div class="pick-item"></div>
+    <div class="pick-item"></div>
+    
+    
+    <div class="pick-item"></div>
+    <div class="pick-item"></div>
+    <div class="pick-item"></div>
+    <div class="pick-item"></div>
+  </div>
+</section>
+
+
+
 </body>        
     </html>
     
