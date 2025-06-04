@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+        <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -214,7 +215,7 @@
       <div class="category-section" id="flower-pots">
         <h2>flower-pots</h2>
           <div class="product">
-            <img src="https://via.placeholder.com/200?text=Single+Flower" alt="Sunflower Pot">
+            <img src= "https://via.placeholder.com/200?text=Single+Flower" alt="daisy Pot">
             <h4>Sunflower Pot</h4>
             <p>₹250</p>
             <button onclick="addToCart('Sunflower pot', 250)">Add to Cart</button>
@@ -250,21 +251,21 @@
           <h2>Single Flowers</h2>
           <div class="products">
             <div class="product">
-              <img src="https://via.placeholder.com/200?text=Roseflower" alt="Roseflower">
+              <img src="rose.html.jpeg" alt="Roseflower">
               <h4>Roseflower</h4>
               <p>₹120</p>
               <button onclick="addToCart('Roseflower', 120)">Add to Cart</button>
             </div>
             <div class="product">
-              <img src="https://via.placeholder.com/200?text=Roseflower" alt="Sunflower">
+              <img src="sunflower.html.jpeg" alt="Sunflower">
               <h4>Sunflower</h4>
-              <p>₹120</p>
+              <p>₹150</p>
               <button onclick="addToCart('Sunflower', 120)">Add to Cart</button>
             </div>
             <div class="product">
-              <img src="https://via.placeholder.com/200?text=Roseflower" alt="Daisyflower">
+              <img src="daisy.html.jpeg" alt="Daisyflower">
               <h4>Daisyflower</h4>
-              <p>₹120</p>
+              <p>₹100</p>
               <button onclick="addToCart('Daisyflower', 120)">Add to Cart</button>
             </div>
             <div class="product">
@@ -281,7 +282,7 @@
         <h2>Bouquets</h2>
         <div class="products">
           <div class="product">
-            <img src="https://via.placeholder.com/200?text=Bouquet" alt="Bouquet">
+            <img src="bouquet.html.jpeg" alt="Bouquet">
             <h4>Mixed Bouquet</h4>
             <p>₹400</p>
             <button onclick="addToCart('Mixed Bouquet', 400)">Add to Cart</button>
@@ -344,47 +345,28 @@
 
   
   <script>
-    function showCategory(categoryId) {
-      const sections = document.querySelectorAll('.category-section');
-      sections.forEach(section => section.classList.remove('active'));
-      document.getElementById(categoryId).classList.add('active');
-    }
+  const cart = [];
 
-    const cart = [];
+  function showCategory(categoryId) {
+    document.querySelectorAll('.category-section').forEach(section => section.classList.remove('active'));
+    document.getElementById(categoryId).classList.add('active');
+  }
 
-    function addToCart(name, price) {
-      cart.push({ name, price });
-      updateCart();
-    }
+  function addToCart(name, price) {
+    cart.push({ name, price });
+    updateCart();
+  }
 
-    function updateCart() {
-      const cartList = document.getElementById('cart-items');
-      cartList.innerHTML = '';
-      let total = 0;
-      cart.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = `${item.name} - ₹${item.price}`;
-        cartList.appendChild(li);
-        total += item.price;
-      });
-      document.getElementById('cart-total').textContent = total;
-    }
-  </script>
+  function updateCart() {
+    const cartList = document.getElementById('cart-items');
+    let total = 0;
+    cartList.innerHTML = cart.map(item => {
+      total += item.price;
+      return `<li>${item.name} - ₹${item.price}</li>`;
+    }).join('');
+    document.getElementById('cart-total').textContent = total;
+  }
+</script>
+
 </body>
 </html>
-
-      
-  
-   
-      
-   
-     
-
- 
-            
-            
-            
-           
-
-  
-  
